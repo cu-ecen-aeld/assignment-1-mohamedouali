@@ -14,9 +14,7 @@
 */
 void test_validate_my_username()
 {
-    /**
-     * TODO: Replace the line below with your code here as described above to verify your /conf/username.txt 
-     * config file and my_username() functions are setup properly
-     */
-    TEST_ASSERT_TRUE_MESSAGE(false,"AESD students, please fix me!");
+    const char *malloced_username = malloc_username_from_conf_file();
+    const char *my_user = my_username();
+    TEST_ASSERT_EQUAL_STRING_MESSAGE(my_user, malloced_username, "The username from my_username() does not match the one from the configuration file.");
 }
